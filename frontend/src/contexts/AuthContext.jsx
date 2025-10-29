@@ -20,9 +20,12 @@ export const AuthProvider = ({ children }) => {
     const login = (access_token, userData) => {
         setToken(access_token);
         setUser(userData);
+        if (userData) { // use the new userData
+            localStorage.setItem("user", JSON.stringify(userData));
+        }
         localStorage.setItem("access_token", access_token);
-        localStorage.setItem("user", JSON.stringify(userData));
     };
+
 
     const logout = () => {
         setToken(null);
