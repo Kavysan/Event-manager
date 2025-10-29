@@ -3,6 +3,9 @@
 const BASE_URL = import.meta.env.VITE_BASE_URL;
 const API_KEY = import.meta.env.VITE_API_KEY;
 
+console.log(import.meta.env.VITE_BASE_URL, import.meta.env.VITE_API_KEY);
+
+
 export const fetchEvents = async (keyword = "") => {
     try {
         const url = `${BASE_URL}/events.json?countryCode=US${
