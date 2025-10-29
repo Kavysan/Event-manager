@@ -1,5 +1,7 @@
-const API_KEY = "bm5WJM7ARsMF51zDrYis5szAmZ3OPFpA";
-const BASE_URL = "https://app.ticketmaster.com/discovery/v2";
+
+// const BASE_URL = "https://app.ticketmaster.com/discovery/v2";
+const BASE_URL = import.meta.env.VITE_BASE_URL;
+const API_KEY = import.meta.env.VITE_API_KEY;
 
 export const fetchEvents = async (keyword = "") => {
     try {
