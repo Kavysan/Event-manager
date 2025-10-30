@@ -23,7 +23,14 @@ function EventCard({ event }) {
 
     const cartItem = cart.find((item) => item.event.id === event.id);
 
-    const handleBuyClick = () => setShowCartOptions(true);
+    const handleBuyClick = async () => {
+        const token = localStorage.getItem("access_token");
+        if (!token || token === "undefined" || token === "null") {
+            navigate('/login', { state: { message: "Please login to buy tickets first." } });
+            return
+        } 
+        else setShowCartOptions(true);
+    };
 
 
     const handleAddToCartClick = async () => {
