@@ -7,9 +7,10 @@ app = FastAPI()
 
 # CORS middleware first
 origins = [
-    "http://localhost:5173",
-    "http://127.0.0.1:5173",
-    "https://event-manager-1-ncav.onrender.com"
+        "https://event-manager-1-ncav.onrender.com",
+        "https://event-manager-xdpt.onrender.com",  
+        "http://localhost:5173",
+        "http://127.0.0.1:5173",
 ]
 
 app.add_middleware(
